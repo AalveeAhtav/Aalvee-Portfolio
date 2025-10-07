@@ -23,6 +23,14 @@ const projects = [
   },
   {
     id: 3,
+    title: 'CardiCrew (For BlackHeart NGO - CFG)',
+    description: 'Built a fullstack website with a team during the 24hr JP Morgan Code for Good hackathon that addressed the needs of the BlackHeart NGO such as summarized policies and a community heat map.',
+    image: '/blackheart.png',
+    tools: ['Next.js', 'React', 'Node.js', 'Express.js','Firebase', 'Gemini API'],
+	  repo: 'https://github.com/cfgtexas25/Team-27',
+  },
+  {
+    id: 4,
     title: 'Aim Trainer',
     description: "Designed with Python utilizing its various libraries. Keeps track of hit or missed targets and shows accuracy.",
     image: '/aim_trainer.png',
@@ -30,7 +38,7 @@ const projects = [
 	  repo: 'https://github.com/AalveeAhtav/aim-trainer-python',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Weather App',
     description: 'Designed with React and JavaScript to show real time Weather information using OpenWeather’s API.',
     image: '/weather_app.png',
@@ -38,7 +46,7 @@ const projects = [
 	  repo: 'https://github.com/AalveeAhtav/weather_app_react',
   },
   {
-    id: 5,
+    id: 6,
     title: 'FinSight AI',
     description: `AI-powered tool to upload and analyze financial report PDFs with real-time data extraction, chatbot Q&A, and visual dashboards. Supports tables, images, and charts via Unstructured.io with optimized prompt tuning for accuracy and performance.`,
     image: '/finsight.png',
@@ -46,7 +54,7 @@ const projects = [
 	  repo: 'https://github.com/Aproteem/HACK-AI-2.5',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Spooderman Hangman Word Guessing Game',
     description: 'Terminal-based hangman game with Spiderman ASCII animations. Built in C++ with custom game logic and UI.',
     image: '/spooderman.png',

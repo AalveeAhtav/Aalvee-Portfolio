@@ -95,7 +95,7 @@ export default function HeroSection() {
 						transition={{ duration: 0.8, delay: 0.8 }}
 					>
 						<a
-							href="https://drive.google.com/file/d/1HZ33Ehrceen8sMwZ37dnal5vxMtMrewQ/view?usp=sharing"
+							href="https://drive.google.com/file/d/1Uuu6DNQcKMQtGOWoB4Aca0jXksHIFawM/view?usp=sharing"
 							target="_blank"
 							className="group flex items-center gap-2 px-6 py-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors w-full sm:w-auto"
 						>
