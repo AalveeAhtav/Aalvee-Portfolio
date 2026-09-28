@@ -44,5 +44,14 @@ Authorization: after reviewing the concept, the user said, "okay do this, lets s
 ### Follow-up assets
 
 - New portrait from the user.
-- CardiCrew screenshot and repository URL.
+- CardiCrew screenshot and repository URL were recovered from the remote branch during the merge below.
 - Exact original BMW image files can replace the generated illustrations if desired.
+
+### Merge conflict resolution
+
+Authorization: the user requested resolving the merge conflicts and pushing to Git.
+
+- Resolved conflicts in HeroSection and ProjectsSection by preserving the approved BMW redesign and the supplied local resume PDF.
+- Integrated the remote CardiCrew screenshot (`public/blackheart.png`), repository URL, and complete technology list into the redesigned card.
+- Retained all six selected projects and kept Weather App removed.
+- Validation: production build, lint, and type checking passed after conflict resolution.
