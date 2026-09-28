@@ -1,0 +1,45 @@
+.switcher { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 4%; background: #111c29; border-bottom: 1px solid #344c65; font-size: 15px; color: #c0cddd; }
+.switcher > span { font-size: 13px; letter-spacing: .18em; }
+.switcher > div { display: flex; gap: 10px; }
+.switcher a { padding: 8px 12px; border-radius: 3px; }
+.switcher a[aria-current] { background: #254564; color: white; }
+.fusion { position: relative; isolation: isolate; min-height: 750px; overflow: hidden; background: #080b0e; }
+.flag { position: absolute; top: 0; right: 0; width: 65%; height: 70%; z-index: -2; mask-image: linear-gradient(90deg, transparent, black 35%), linear-gradient(0deg, transparent, black 28%); mask-composite: intersect; }
+.flag img { object-fit: cover; object-position: center 30%; filter: brightness(.75); }
+.car { position: absolute; right: -3%; bottom: 0; width: 74%; height: 58%; z-index: -1; mask-image: linear-gradient(90deg, transparent, black 18%), linear-gradient(180deg, transparent, black 20%, black 82%, transparent); mask-composite: intersect; }
+.car img { object-fit: cover; object-position: 60% 58%; }
+.intro { padding-top: 145px; position: relative; }
+.intro h1 { font-size: clamp(52px, calc(5.1vw + 4px), 80px); }
+.intro :global(.hero-description) { max-width: 390px; }
+.fusionBottom { position: absolute; bottom: 28px; left: 0; right: 0; display: flex; justify-content: space-between; font-size: 13px; letter-spacing: .18em; color: #c0d3e7; }
+.fusionBottom > span { color: #b8a67b; }
+.celebration { position: relative; isolation: isolate; overflow: hidden; min-height: 490px; border-block: 1px solid #24394c; background: #080e15; }
+.celebrationPhoto { position: absolute; right: 0; top: 0; bottom: 0; width: 73%; z-index: -1; mask-image: linear-gradient(90deg, transparent, black 48%); }
+.celebrationPhoto img { object-fit: cover; object-position: center 26%; filter: brightness(.7); }
+.celebration::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, #080e15, transparent 28%, transparent 80%, #080e1533); }
+.passionCopy { padding-block: 105px 65px; }
+.passionCopy h2 { font-size: clamp(36px, calc(3.7vw + 4px), 58px); margin: 25px 0 22px; max-width: 690px; }
+.passionCopy > p:not(:first-child) { font-size: 17px; color: #b4c4d5; line-height: 1.9; }
+.signature { display: flex; align-items: center; gap: 17px; margin-top: 34px; font-size: 13px; letter-spacing: .22em; color: #8fc9ef; }
+.signature i { display: block; width: 32px; height: 1px; background: #4882b2; }
+@media (max-width: 1050px) { .intro { padding-top: 85px; } .fusion { min-height: 700px; } .flag { width: 72%; } .intro h1 { font-size: 58px; } }
+@media (max-width: 760px) {
+  .switcher { flex-wrap: wrap; padding: 10px 14px; gap: 8px; }
+  .switcher > div { order: 3; width: 100%; }
+  .switcher a { font-size: 14px; padding: 8px; }
+  .fusion { min-height: 860px; }
+  .intro { padding-top: 40px; }
+  .intro h1 { font-size: clamp(46px, calc(10vw + 4px), 62px); }
+  .intro :global(.hero-description) { font-size: 17px; }
+  .flag { top: 320px; height: 345px; width: 100%; mask-image: linear-gradient(0deg, transparent, black 25%, black 75%, transparent); }
+  .flag img { object-position: center; }
+  .car { width: 115%; height: 280px; right: -3%; bottom: 15px; }
+  .fusionBottom { font-size: 11px; }
+  .celebration { min-height: 655px; }
+  .celebrationPhoto { top: 235px; width: 100%; mask-image: linear-gradient(180deg, transparent, black 25%); }
+  .celebrationPhoto img { object-position: 60% center; }
+  .passionCopy { padding-block: 42px; }
+  .passionCopy h2 { font-size: 38px; }
+  .passionCopy > p:not(:first-child) { font-size: 16px; }
+  .signature { margin-top: 20px; }
+}
