@@ -1,113 +1,40 @@
-'use client';
-
-import { motion } from 'framer-motion';
+﻿'use client';
+import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-
 const projects = [
-  {
-    id: 1,
-    title: 'Flight Plan with Cost and Time Estimation',
-    description: "A Java program which will determine all possible flight plans for a person wishing to travel between two different cities by an airline (assuming a flight path exists). Also filters out the top 3 flights either by cost or time using Iterative Backtracking.",
-    image: '/flights.png',
-    tools: ['Java', 'Iterative Backtracking'],
-	  repo: 'https://github.com/AalveeAhtav/Flight_Project',
-  },
-  {
-    id: 2,
-    title: 'Complex Navigation Game',
-    description: "Navigate through a complex containing various locations. Also find the shortest path using Dijkstra’s algorithm from one location to another.",
-    image: '/complex.png',
-    tools: ['Java', 'Dijkstra’s Algorithm'],
-	  repo: 'https://github.com/AalveeAhtav/Complex-Game',
-  },
-  {
-    id: 3,
-    title: 'Aim Trainer',
-    description: "Designed with Python utilizing its various libraries. Keeps track of hit or missed targets and shows accuracy.",
-    image: '/aim_trainer.png',
-    tools: ['Python'],
-	  repo: 'https://github.com/AalveeAhtav/aim-trainer-python',
-  },
-  {
-    id: 4,
-    title: 'Weather App',
-    description: 'Designed with React and JavaScript to show real time Weather information using OpenWeather’s API.',
-    image: '/weather_app.png',
-    tools: ['React', 'JavaScript', 'OpenWeather API'],
-	  repo: 'https://github.com/AalveeAhtav/weather_app_react',
-  },
-  {
-    id: 5,
-    title: 'FinSight AI',
-    description: `AI-powered tool to upload and analyze financial report PDFs with real-time data extraction, chatbot Q&A, and visual dashboards. Supports tables, images, and charts via Unstructured.io with optimized prompt tuning for accuracy and performance.`,
-    image: '/finsight.png',
-    tools: ['Python', 'Flask', 'React', 'JavaScript', 'OpenAI API', 'Next.js'],
-	  repo: 'https://github.com/Aproteem/HACK-AI-2.5',
-  },
-  {
-    id: 6,
-    title: 'Spooderman Hangman Word Guessing Game',
-    description: 'Terminal-based hangman game with Spiderman ASCII animations. Built in C++ with custom game logic and UI.',
-    image: '/spooderman.png',
-    tools: ['C++', 'ASCII Art'],
-	  repo: 'https://github.com/AalveeAhtav/DallasCollege-SpoodermanGame',
-  },
+  { title: 'FinSight AI', type: 'FULL STACK / AI', image: '/finsight.png', description: 'From annual reports to answers. A financial analysis app that ingests PDFs and turns complex documents into a conversation with an AI chatbot.', tools: ['Next.js', 'Flask', 'LangChain', 'OpenAI'], repo: 'https://github.com/Aproteem/HACK-AI-2.5' },
+  { title: 'CardiCrew', type: 'CODE FOR GOOD / 2025', image: null, description: 'Built for BlackHeart NGO in 24 hours at JPMorgan Code for Good. A full-stack platform with a real-time needs heat map and authenticated internal and public content controls.', tools: ['React', 'Node.js', 'Firebase', 'Gemini AI'], repo: null },
+  { title: 'Flight Plan', type: 'ALGORITHMS / JAVA', image: '/flights.png', description: 'Find every valid flight route between two cities, then rank the top three by cost or travel time using iterative backtracking.', tools: ['Java', 'Iterative backtracking'], repo: 'https://github.com/AalveeAhtav/Flight_Project' },
+  { title: 'Complex Navigation Game', type: 'ALGORITHMS / JAVA', image: '/complex.png', description: 'Explore a complex of connected locations and find the shortest route between them with Dijkstra’s algorithm.', tools: ['Java', 'Dijkstra’s algorithm'], repo: 'https://github.com/AalveeAhtav/Complex-Game' },
+  { title: 'Aim Trainer', type: 'INTERACTIVE / PYTHON', image: '/aim_trainer.png', description: 'An interactive target practice game that tracks hits, misses, and accuracy. A small experiment in feedback, focus, and precision.', tools: ['Python', 'Game development'], repo: 'https://github.com/AalveeAhtav/aim-trainer-python' },
+  { title: 'Spooderman Hangman', type: 'TERMINAL / C++', image: '/spooderman.png', description: 'A terminal-based word guessing game with Spider-Man ASCII animations, custom game logic, and a playful text interface.', tools: ['C++', 'ASCII art'], repo: 'https://github.com/AalveeAhtav/DallasCollege-SpoodermanGame' },
 ];
-
 export default function ProjectsSection() {
-  return (
-    <section className="py-12 md:py-20 px-4 max-w-7xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center"
-      >
-        Featured Projects
-      </motion.h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: project.id * 0.1 }}
-            whileHover={{ scale: 1.02 }}
-            className="group relative aspect-video bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl overflow-hidden"
-          >
-            <Image src={project.image} alt={project.title} fill className="object-cover transition-transform group-hover:scale-105" />
-            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-300" />
-            <div className="absolute inset-0 p-6 flex flex-col justify-end">
-              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-
-              <div className="flex flex-wrap gap-2 items-center">
-                {project.tools?.map((tool) => (
-                  <span
-                    key={tool}
-                    className="text-xs bg-white/10 px-3 py-1 rounded-full text-white"
-                  >
-                    {tool}
-                  </span>
-                ))}
-
-                <Link
-				href={project.repo}
-				target="_blank"
-				rel="noopener noreferrer"
-				className="text-xs px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full transition-colors ml-auto"
-				>
-				GitHub
-				</Link>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+  const [page, setPage] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+  const visible = showAll ? projects : projects.slice(page * 2, page * 2 + 2);
+  return <section id="work" className="work-section section-border" aria-labelledby="work-title">
+    <div className="work-scene">
+      <Image src="/images/m3-profile.webp" alt="Side profile of a blue BMW M3" fill sizes="100vw" className="profile-image" />
+      <div className="work-shade" />
+      <div className="container work-heading"><p className="eyebrow"><span className="section-number">02</span> BUILT TO MAKE A DIFFERENCE</p><h2 id="work-title">Selected work<span className="blue-period">.</span></h2><p>Different challenges.<br />The same drive to solve them.</p></div>
+    </div>
+    <div className="container projects-content">
+      <div id="project-list" className="projects-grid">
+        {visible.map(project => <article className="project-card" key={project.title}>
+          <div className="project-visual">
+            {project.image ? <Image src={project.image} alt={`${project.title} application screenshot`} fill sizes="(max-width: 760px) 90vw, 42vw" /> : <div className="cardicrew-art" aria-label="CardiCrew project title illustration"><span className="heart-mark" aria-hidden="true">♡</span><strong>CardiCrew</strong><span>TECHNOLOGY WITH HEART.</span><div className="pulse-line" aria-hidden="true" /></div>}
+            <span className="project-number">{String(projects.indexOf(project) + 1).padStart(2, '0')} / 06</span>
+          </div>
+          <div className="project-copy"><p className="eyebrow">{project.type}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p><ul className="tags" aria-label="Technologies">{project.tools.map(tool => <li key={tool}>{tool}</li>)}</ul>
+            {project.repo ? <a className="text-link" href={project.repo} target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span><span className="sr-only"> — {project.title}</span></a> : <a className="text-link" href="mailto:aalvee6403@gmail.com?subject=Tell%20me%20about%20CardiCrew">Let’s talk about this project <span aria-hidden="true">↗</span></a>}
+          </div>
+        </article>)}
       </div>
-    </section>
-  );
+      <div className="project-controls">
+        <button className="text-link" aria-expanded={showAll} aria-controls="project-list" onClick={() => setShowAll(!showAll)}>{showAll ? 'Show featured projects −' : 'Show all 6 projects + '}</button>
+        {!showAll && <div className="pagination"><button aria-label="Previous projects" disabled={page === 0} onClick={() => setPage(page - 1)}>←</button><span aria-live="polite">{String(page * 2 + 1).padStart(2, '0')}–{String(page * 2 + 2).padStart(2, '0')} <span>/ 06</span></span><button aria-label="Next projects" disabled={page === 2} onClick={() => setPage(page + 1)}>→</button></div>}
+      </div>
+    </div>
+  </section>;
 }

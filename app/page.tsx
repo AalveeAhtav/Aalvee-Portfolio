@@ -1,17 +1,19 @@
-'use client';
-
-import HeroSection from './components/HeroSection';
+﻿import HeroSection from './components/HeroSection';
 import ProjectsSection from './components/ProjectsSection';
 import SkillsSection from './components/SkillsSection';
 import ContactSection from './components/ContactSection';
+import AboutSection from './components/AboutSection';
+import Navigation from './components/Navigation';
 
-export default function MinimalModernPortfolio() {
-	return (
-		<div className="min-h-screen bg-black text-white">
-			<HeroSection />
-			<SkillsSection />
-			<ProjectsSection />
-			<ContactSection />
-		</div>
-	);
+export default function Portfolio() {
+  return <>
+    <a className="skip-link" href="#main">Skip to content</a>
+    <Navigation />
+    <main id="main"><HeroSection /><ProjectsSection /><AboutSection /><SkillsSection /><ContactSection /></main>
+    <footer className="footer container">
+      <a className="wordmark" href="#home">AALVEE AHTAV<span className="m-stripes" aria-hidden="true"><i /><i /><i /></span></a>
+      <span>Personal portfolio · Inspired by BMW M.</span>
+      <a href="#home">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </>;
 }
