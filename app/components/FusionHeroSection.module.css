@@ -1,21 +1,21 @@
-.fusion { position: relative; isolation: isolate; min-height: 750px; overflow: hidden; background: #080b0e; }
+.fusion { position: relative; isolation: isolate; min-height: 46.875rem; overflow: hidden; background: #080b0e; }
 .flag { position: absolute; top: 0; right: 0; width: 65%; height: 70%; z-index: -2; mask-image: linear-gradient(90deg, transparent, black 35%), linear-gradient(0deg, transparent, black 28%); mask-composite: intersect; }
 .flag img { object-fit: cover; object-position: center 30%; filter: brightness(.75); }
 .car { position: absolute; right: 0; bottom: 0; width: 70%; height: 58%; z-index: -1; mask-image: linear-gradient(90deg, transparent, black 18%), linear-gradient(180deg, transparent, black 20%, black 82%, transparent); mask-composite: intersect; }
 .car img { object-fit: cover; object-position: 60% 58%; }
-.intro { padding-top: 145px; position: relative; }
-.intro h1 { font-size: clamp(52px, calc(5.1vw + 4px), 80px); }
-.intro :global(.hero-description) { max-width: 390px; }
-.fusionBottom { position: absolute; bottom: 28px; left: 0; right: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; letter-spacing: .18em; color: #c0d3e7; }
+.intro { padding-top: 9.0625rem; position: relative; }
+.intro h1 { font-size: clamp(3.25rem, calc(5.1vw + 0.25rem), 5rem); }
+.intro :global(.hero-description) { max-width: 24.375rem; }
+.fusionBottom { position: absolute; bottom: 1.75rem; left: 0; right: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem; font-size: 0.8125rem; letter-spacing: .18em; color: #c0d3e7; }
 .fusionBottom > span { color: #b8a67b; }
-@media (max-width: 1050px) { .intro { padding-top: 85px; } .fusion { min-height: 700px; } .flag { width: 72%; } .intro h1 { font-size: 58px; } }
+@media (max-width: 1050px) { .intro { padding-top: 5.3125rem; } .fusion { min-height: 43.75rem; } .flag { width: 72%; } .intro h1 { font-size: 3.625rem; } }
 @media (max-width: 760px) {
-  .fusion { min-height: 860px; }
-  .intro { padding-top: 40px; }
-  .intro h1 { font-size: clamp(46px, calc(10vw + 4px), 62px); }
-  .intro :global(.hero-description) { font-size: 17px; }
-  .flag { top: 320px; height: 345px; width: 100%; mask-image: linear-gradient(0deg, transparent, black 25%, black 75%, transparent); }
+  .fusion { min-height: 53.75rem; }
+  .intro { padding-top: 2.5rem; }
+  .intro h1 { font-size: clamp(2.875rem, calc(10vw + 0.25rem), 3.875rem); }
+  .intro :global(.hero-description) { font-size: 1.0625rem; }
+  .flag { top: 20rem; height: 21.5625rem; width: 100%; mask-image: linear-gradient(0deg, transparent, black 25%, black 75%, transparent); }
   .flag img { object-position: center; }
-  .car { width: 100%; height: 280px; right: 0; bottom: 15px; }
-  .fusionBottom { font-size: 11px; }
+  .car { width: 100%; height: 17.5rem; right: 0; bottom: 0.9375rem; }
+  .fusionBottom { font-size: 0.6875rem; }
 }
