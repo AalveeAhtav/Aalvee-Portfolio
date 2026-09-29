@@ -12,8 +12,12 @@ export default function AboutSection() {
       </div>
     </div>
     </div></div>
-    <div id="experience" className="experience-block container">
-      <div className="experience-heading"><p className="eyebrow">EXPERIENCE / IN PRODUCTION</p><h2>Built for the<br />real world<span className="blue-period">.</span></h2><a className="text-link" href="/Aalvee_Ahtav_Resume.pdf" target="_blank" rel="noopener noreferrer">The full story in my resume <span aria-hidden="true">↗</span></a></div>
+  </section>;
+}
+
+export function ExperienceSection() {
+  return <section id="experience" className="experience-section" aria-labelledby="experience-title"><div className="experience-block container">
+      <div className="experience-heading"><p className="eyebrow">EXPERIENCE / IN PRODUCTION</p><h2 id="experience-title">Built for the<br />real world<span className="blue-period">.</span></h2><a className="text-link" href="/Aalvee_Ahtav_Resume.pdf" target="_blank" rel="noopener noreferrer">The full story in my resume <span aria-hidden="true">↗</span></a></div>
       <div className="experience-detail">
         <div className="experience-title"><div><h3>Walmart Global Tech</h3><p>Software Engineer Intern</p></div><span className="eyebrow">JUN–AUG 2026</span></div>
         <p className="team-label">Sam’s Club · Bake-n-Bite Team</p>

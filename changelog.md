@@ -8,6 +8,41 @@ This file tracks changes made during the portfolio redesign. Update it whenever 
 - Discuss the proposed scope and wait for explicit approval before proceeding.
 - Include a changelog update with each approved change.
 
+## Version 1.2 — 2026-09-28
+
+### Full-screen layout and navigation
+
+- Widened centered content containers, balanced navigation, and improved responsive spacing and mobile portrait alignment.
+- Added six full-width, viewport-height pages: Home, Work, About, Experience, Skills, and Contact. Separated Experience from About and included the footer within Contact.
+- Display one page at a time with a right-to-left entrance transition. Taller content scrolls internally before advancing to the next page.
+- Added wheel, touch, keyboard, and previous/next page navigation with a page indicator, transition cooldown, and reduced-motion support.
+- Preserved section links, direct hash navigation, and browser history behavior; inactive pages are hidden and inert.
+
+### Work background and project controls
+
+- Moved the BMW image from the short Work banner into a full-page background.
+- Centered and scaled the car to preserve its full silhouette, with a softened background filling the screen and a dark overlay behind the project content.
+- Moved project pagination arrows to the left and right of the cards, with responsive positioning and disabled states at the first and last pairs.
+- Made the show-all/featured-projects toggle a bright blue button.
+- Simplified project badges to individual two-digit numbers and moved them to the top-right corner of each image.
+
+### Technology logos and page backgrounds
+
+- Added locally hosted SVG technology logos beside the Skills labels, with a custom CI / CD symbol and decorative images hidden from assistive technology.
+- Arranged skills into spaced logo-and-label columns, preserving the four desktop categories and adapting the layout for tablet and mobile widths.
+- Included the Devicon license and logo source attribution alongside the assets.
+- Applied the supplied `gdUksy.jpg` artwork to page 4 (Experience) and page 5 (Skills), stored locally as `public/images/blue-abstract-background.jpg`, with responsive cover sizing and a dark overlay for readable text.
+
+### Validation
+
+- ESLint and TypeScript checks passed during implementation; whitespace checks passed after the final badge changes.
+- Headless Chrome checks covered mobile, tablet, and desktop widths from 320px to 2560px, confirming page isolation, full-width layout, and no horizontal document overflow.
+- Verified wheel navigation, internal scrolling, keyboard navigation, section links, browser back, direct hash links, reduced motion, the mobile swipe handler, and mobile menu navigation.
+- Checked BMW image geometry at 390px, 1440px, and 2560px to confirm the car silhouette stays within the screen bounds.
+- Verified project arrow placement, pagination, disabled states, and show-all behavior at 320px, 390px, 768px, 1440px, and 2560px.
+- ESLint, TypeScript, and the production build passed after adding the technology logos; validated all 23 downloaded SVG files.
+- ESLint passed after the background changes, and matching SHA-256 hashes confirmed the local background copy matches the supplied image. The production build was not rerun after the background-only changes.
+
 ## Version 1.1 — 2026-09-28
 
 ### Design and typography
